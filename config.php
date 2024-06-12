@@ -74,3 +74,9 @@ $THEME->layouts = [
         'options' => array('langmenu' => true),
     ),
 ];
+
+$THEME->haseditswitch = true;
+$THEME->usescourseindex = true;
+$THEME->activityheaderconfig = [
+    'notitle' => true
+];

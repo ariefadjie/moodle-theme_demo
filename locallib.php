@@ -7,7 +7,7 @@
 // (at your option) any later version.
 //
 // Moodle is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// but WITHOUT ANY WARRANTY without even the implied warranty of
 // MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 // GNU General Public License for more details.
 //
@@ -26,14 +26,14 @@
  * Display some extra message.
  */
 function theme_demo_extra_message($course) {
-    echo html_writer::start_tag('div', array('class' => 'card text-white bg-primary'));
-    echo html_writer::start_tag('div', array('class' => 'card-body'));
-    echo html_writer::start_tag('h5', array('class' => 'card-title'));
-    echo get_string('demo_card_title', 'theme_demo');
-    echo html_writer::end_tag('h5');
-    echo html_writer::start_tag('div', array('class' => 'card-text'));
-    echo get_string('demo_message', 'theme_demo');
-    echo html_writer::end_tag('div');
-    echo html_writer::end_tag('div');
-    echo html_writer::end_tag('div');
+    return html_writer::start_tag('div', array('class' => 'card text-white bg-primary'))
+    . html_writer::start_tag('div', array('class' => 'card-body'))
+    . html_writer::start_tag('h5', array('class' => 'card-title'))
+    . get_string('demo_card_title', 'theme_demo')
+    . html_writer::end_tag('h5')
+    . html_writer::start_tag('div', array('class' => 'card-text'))
+    . get_string('demo_message', 'theme_demo')
+    . html_writer::end_tag('div')
+    . html_writer::end_tag('div')
+    . html_writer::end_tag('div');
 }

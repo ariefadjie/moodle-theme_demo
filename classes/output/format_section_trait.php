@@ -35,6 +35,17 @@ use completion_info;
 use stdClass;
 
 trait format_section_trait {
+
+    public function render_content($output) {
+        global $COURSE;
+        $format = course_get_format($COURSE);
+        $outputclass = $format->get_output_classname('content');
+        $widget = new $outputclass($format);
+        $data = $widget->export_for_template($this);
+        $data->extrablock = theme_demo_extra_message($this);
+
+        return $this->render_from_template('theme_demo/core_courseformat/local/content', $data);
+    }
 	/**
      * Output the html for a multiple section page
      *
